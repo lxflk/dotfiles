@@ -40,10 +40,11 @@ config.keys = {
     {key="7", mods="CTRL|ALT", action=wezterm.action{ActivateTab=6}},
     {key="8", mods="CTRL|ALT", action=wezterm.action{ActivateTab=7}},
     {key="9", mods="CTRL|ALT", action=wezterm.action{ActivateTab=8}},
+    {key="Backspace", mods="CTRL", action=wezterm.action{SendString="\x08"}},
   }
 
 -- Set tmux as the default program to start
-config.default_prog = {"/usr/bin/tmux"}
+-- config.default_prog = {"/usr/bin/tmux"} (Start it in zshrc)
 
 -- and finally, return the configuration to wezterm
 return config

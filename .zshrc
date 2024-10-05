@@ -1,3 +1,8 @@
+# Automatically start or attach to tmux without console output
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach &> /dev/null || tmux new-session
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -48,6 +53,12 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+# Keybindings for word skipping with Ctrl + arrow keys
+bindkey '^[[1;5C' forward-word   # Ctrl + Right Arrow
+bindkey '^[[1;5D' backward-word  # Ctrl + Left Arrow
+# Keybindings for deleting words
+bindkey '^[[3;5~' kill-word        # Ctrl + Entf (Delete word on the right)
+bindkey '^H' backward-kill-word    # Ctrl + Backspace (Delete word on the left)
 
 # History
 HISTSIZE=5000
@@ -75,3 +86,4 @@ alias c='clear'
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
