@@ -87,3 +87,4 @@ alias c='clear'
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval $(dircolors ~/.dircolors)
