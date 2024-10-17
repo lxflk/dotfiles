@@ -88,3 +88,5 @@ alias c='clear'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(dircolors ~/.dircolors)
+
+export PATH=$PATH:/snap/bin
