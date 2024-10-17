@@ -12,6 +12,11 @@ Ensure you have the following installed on your system
 sudo apt install stow
 ```
 
+### xclip
+```
+sudo apt install xclip
+```
+
 ## Installation
 
 First, check out the dotfiles repo in your $HOME directory using git
