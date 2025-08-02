@@ -19,15 +19,19 @@ sudo apt install xclip
 
 ## Installation
 
-First, check out the dotfiles repo in your $HOME directory using git
+1. Clone the repo anywhere (examples: ~/git-projects/dotfiles, ~/src/dotfiles, etc.).
 
 ```
 $ git clone git@github.com:lxflk/dotfiles.git
 $ cd dotfiles
 ```
 
-then use GNU stow to create symlinks
-
+2. Preview what will be linked into `$HOME`:
 ```
-$ stow .
+stow -nvt "$HOME" .
+```
+
+3. Apply the links into `$HOME`:
+```
+stow -t "$HOME" -S .
 ```
